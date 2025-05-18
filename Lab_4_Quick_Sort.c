@@ -10,15 +10,6 @@ void swap(int *a, int *b){
     *b = temp;
 }
 
-void quickSort(int arr[], int low, int high){
-    if (low < high)
-    {
-        int par = partition(arr, low, high);
-        quickSort(arr, low, par-1);
-        quickSort(arr, par + 1, high);
-        
-    }
-}
 
 int partition(int a[], int low, int high){
     int pivot = a[high];
@@ -33,9 +24,18 @@ int partition(int a[], int low, int high){
     return i+1;
 }
 
+void quickSort(int arr[], int low, int high){
+    if (low < high)
+    {
+        int par = partition(arr, low, high);
+        quickSort(arr, low, par-1);
+        quickSort(arr, par + 1, high);
+        
+    }
+}
 void printArray(int arr[], int no){
     for (int i=0; i<no; i++)
-        printf(" %d ", arr[i]);
+    printf(" %d ", arr[i]);
     printf("\n");
 }
 

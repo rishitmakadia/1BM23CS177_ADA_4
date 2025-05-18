@@ -5,6 +5,16 @@
 
 int adj[MAX][MAX], visited[MAX], result[MAX], top=-1;
 
+
+void dfs(int start, int n, int adj[][MAX]){
+    visited[start]=1;
+    for(int i=0; i<n; i++){
+        if(adj[start][i]==1 && visited[i]==0)
+        dfs(i,n,adj);
+    }
+    result[++top]=start;
+}
+
 void dfs_top(int n, int adj[][MAX]){
     for(int i=0; i<n; i++)
         visited[i]=0;
@@ -13,16 +23,6 @@ void dfs_top(int n, int adj[][MAX]){
             dfs(j,n,adj);
     }    
 }
-
-void dfs(int start, int n, int adj[][MAX]){
-    visited[start]=1;
-    for(int i=0; i<n; i++){
-        if(adj[start][i]==1 && visited[i]==0)
-            dfs(i,n,adj);
-    }
-    result[++top]=start;
-}
-
 int main(){
     int n;
     printf("Enter No. of Nodes: ");
@@ -38,4 +38,5 @@ int main(){
     for(int k=(n-1) ; k>=0; k--){
         printf("\t%d", result[k]);
     }
+    printf("\n");
 }

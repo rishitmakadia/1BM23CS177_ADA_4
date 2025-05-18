@@ -74,5 +74,5 @@ void main()
 
     printf("Sorted Array: ");
     printArray(array, N);
-    printf("Time taken to sort: %.100f seconds\n", time_taken);
+    printf("Time taken to sort: %.10f seconds\n", time_taken);
 }

@@ -10,7 +10,7 @@ int main() {
     for (i = 0; i < n; i++) {
         printf("item[%d] : Weight and Profit = ", i + 1);
         scanf("%d %d", &weight[i], &profit[i]);
-    } f
+    } 
 
     printf("Enter the capacity of knapsack: ");
     scanf("%d", &capacity);
