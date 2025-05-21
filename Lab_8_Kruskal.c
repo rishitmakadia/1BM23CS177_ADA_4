@@ -33,7 +33,8 @@ void kruskal(int n, int a[10][10]) {
         }
         i = find(u, parent);
         j = find(v, parent);
-        if (i != j) {
+        if (i != j) 
+        {
             unionn(i, j, parent);
             temp[k][0] = u;
             temp[k][1] = v;

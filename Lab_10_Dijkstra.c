@@ -1,7 +1,5 @@
 #include <stdio.h>
-
 #define INF 9999
-
 void printPath(int parent[], int j) {
     if (parent[j] == -1)
         return;
@@ -30,7 +28,6 @@ void dijkstra(int n, int cost[10][10], int src) {
     for (i = 1; i < n; i++) {
         min = INF;
         u = -1;
-
         // Find the nearest unvisited vertex
         for (j = 0; j < n; j++) {
             if (!visited[j] && dist[j] < min) {
@@ -38,11 +35,8 @@ void dijkstra(int n, int cost[10][10], int src) {
                 u = j;
             }
         }
-
         if (u == -1) break;
-
         visited[u] = 1;
-
         // Update distances of adjacent vertices
         for (j = 0; j < n; j++) {
             if (!visited[j] && cost[u][j] != INF && dist[u] + cost[u][j] < dist[j]) {

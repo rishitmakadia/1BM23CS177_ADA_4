@@ -39,7 +39,7 @@ void printOnePerm(int a[], bool dir[], int n) {
     if (mobile == 0) return;
 
     int pos = searchArr(a, n, mobile) - 1;
-
+    // Note: We use a[pos] - 1 as index into dir[], because dir[] stores directions for the values (1 to n), not positions.
     if (dir[a[pos] - 1] == RIGHT_TO_LEFT)
         // Swap with the left element
         {

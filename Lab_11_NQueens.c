@@ -26,21 +26,18 @@ bool isSafe(int board[N][N], int row, int col) {
             return false;
         }
     }
-
     // Check upper diagonal on left side
     for (int i = row, j = col; i >= 0 && j >= 0; i--, j--) {
         if (board[i][j] == 1) {
             return false;
         }
     }
-
     // Check lower diagonal on left side
     for (int i = row, j = col; i < N && j >= 0; i++, j--) {
         if (board[i][j] == 1) {
             return false;
         }
     }
-
     return true;
 }
 
@@ -50,7 +47,6 @@ void solveNQueen(int board[N][N], int col) {
         printSolution(board); // If all queens are placed, print the solution
         return; 
     }
-
     for (int i = 0; i < N; i++) {
         if (isSafe(board, i, col)) {
             board[i][col] = 1; // Place the queen
